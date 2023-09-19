@@ -8,7 +8,9 @@ public class Main
         String lastName = "";
         String fullName = "";
         String trash = "";
+
         int favNum = 0; //1 -10
+        //int salary = 0;
         double salary = 0.0;
 
         Scanner in = new Scanner(System.in);
@@ -32,11 +34,21 @@ public class Main
         //OK now lets read some numbers
 
         System.out.println("Enter your fav number [1 - 10]: ");
-        if (in.hasNextInt())
+        if (in.hasNextInt()) // user entered a number correctly
         {
             favNum = in.nextInt();
             in.nextLine(); //Clear the newline / enter from the buffer
-            System.out.println("you said your fav num is: " + favNum);
+
+            if(favNum >= 1 && favNum <=10)
+            {
+                System.out.println("you said your fav num is: " + favNum);
+            }
+            else
+            {
+                System.out.println("you said your fav num is: " + favNum);
+                System.out.println("But, that is not in the range of [1 - 10]");
+            }
+            //System.out.println("you said your fav num is: " + favNum);
         }
         else // dont have a number Must read buffer as a trash string
         {
@@ -45,5 +57,20 @@ public class Main
             System.out.println("Run the program again and do the input correctly");
 
         }
+
+        System.out.println("Enter your salary: ");
+        if(in.hasNextDouble())
+        {
+            salary = in.nextDouble();
+            in.nextLine(); //clear the buffer every time after reading a number
+            System.out.println("You said your salary is: ");
+        }
+        else
+        {
+            trash = in.nextLine();
+            System.out.println("you entered " + trash + " which is wrong!");
+            System.out.println("run the program again with the correct input");
+        }
+
     }
 }
