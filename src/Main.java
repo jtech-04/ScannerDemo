@@ -63,13 +63,13 @@ public class Main
         {
             salary = in.nextDouble();
             in.nextLine(); //clear the buffer every time after reading a number
-            System.out.println("You said your salary is: ");
+            System.out.println("You said your salary is: " + salary);
         }
         else
         {
             trash = in.nextLine();
             System.out.println("you entered " + trash + " which is wrong!");
-            System.out.println("run the program again with the correct input");
+            System.out.println("run the program again with the correct input ");
         }
 
     }
